@@ -1,0 +1,17 @@
+The following CSS code snippet demonstrates an uncommon error related to specificity and inheritance:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green; /* This rule is intended to override the others */
+}
+```
+
+In this scenario, a `<p>` element nested within a `<div>` might not display the expected green text.  This is because the specificity of the `div p` selector is not always enough to override the specificity of the `p` selector when inheritance is involved. The browser might inherit the color from the `p` selector rather than applying the more specific rule from `div p`.
