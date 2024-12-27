@@ -1,0 +1,33 @@
+The solution involves using the `!important` flag to override the inherited style:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green !important; /* Force override */
+}
+```
+
+Alternatively, increase specificity of the `div p` selector to overcome the specificity of the `p` selector.  For example:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div > p {
+  color: green; /* More specific selector */
+}
+```
+
+The `>` ensures that only the direct child `p` elements of `div` are styled, preventing inheritance conflicts.  Choosing the right solution depends on your specific needs and coding style.  Using `!important` should be a last resort.
